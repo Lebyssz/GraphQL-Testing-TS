@@ -1,1 +1,1 @@
-"# GraphQL-Testing (TypeScript Version)" 
+# GraphQL-Testing (TypeScript Version)
