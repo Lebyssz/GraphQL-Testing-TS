@@ -1,45 +1,30 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
 
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-//const MONGO_URI = "mongodb+srv://Lebyzio:Lebyzio@cluster-testing.cvmkhhv.mongodb.net/?retryWrites=true&w=majority"
+const MONGODB = "mongodb+srv://Lebyzio:Lebyzio@cluster-testing.cvmkhhv.mongodb.net/?retryWrites=true&w=majority";
 
-const typeDefs = `#graphql
-type Book {
-    title: String
-    author: String
-}
+// Apollo Server Setup
+const { typeDefs } = require('./graphql/typeDefs');
+const { resolvers } = require('./graphql/resolvers');
 
-type Query {
-    books: [Book]
-}
-`
-
-const books = [
-    {
-        title: 'The Prince',
-        author: 'Niccolo Machievelli'
-    },
-    {
-        title: 'The Awakening',
-        author: 'Kate Chopin'
-    }
-];
-
-const resolvers = {
-    Query: {
-        books: () => books,
-    },
-};
+mongoose.connect(MONGODB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("MongoDB Connection Successful");
+}).catch((err: {message: any}) => {
+    console.log(err.message);
+});
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
 });
 
-const { url } = await startStandaloneServer(server, {
+startStandaloneServer(server, {
     listen: { port: 8000 },
+}).then(({url}) => {
+    console.log(`🚀  Server ready at: ${url}`);
 });
-
-console.log(`🚀  Server ready at: ${url}`)

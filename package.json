@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
@@ -24,8 +24,7 @@
     "@apollo/server": "^4.9.0",
     "apollo-server": "^3.12.0",
     "graphql": "^16.7.1",
-    "mongoose": "^7.4.1",
-    "nodemon": "^3.0.1"
+    "mongoose": "^7.4.1"
   },
   "devDependencies": {
     "@types/node": "^20.4.5",
