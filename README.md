@@ -12,3 +12,14 @@ npm start
 ```
 
 - URL for Testing : http://localhost/8000
+
+# MongoDB Setup (August 2023)
+
+- Create your Cluster
+- Create your Username and Password for Active URI
+- Click **Connect**
+- Click **Drivers**
+- Select **Node.js** and **Version 5.5 or later**
+  ( Depends on your version )
+- Copy **URI**
+- Paste on MONGODB in **index.ts**
