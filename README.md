@@ -1,6 +1,7 @@
 # GraphQL-Testing (TypeScript Version)
+This is Just the Demo Project to Setup Apollo Server :D
 
-**Get Started**
+## Get Started
 
 - go to cmd :
 
