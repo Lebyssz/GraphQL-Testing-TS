@@ -8,7 +8,7 @@
 git clone <this respository>
 cd GraphQL-Testing-TS
 npm install
-npm start
+npm run start
 ```
 
 - URL for Testing : http://localhost/8000
@@ -22,4 +22,4 @@ npm start
 - Select **Node.js** and **Version 5.5 or later**
   ( Depends on your version )
 - Copy **URI**
-- Paste on MONGODB in **index.ts**
+- Paste on MONGODB_URI in **.env**
