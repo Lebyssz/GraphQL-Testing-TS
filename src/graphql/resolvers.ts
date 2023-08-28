@@ -40,6 +40,6 @@ const resolvers = {
     }
 }
 
-// *** Still bug about type of params ***
+// *** Still bug about type of params *** (ง่าย ๆ คือ ไม่ควรใช้ type "Any" ในการระบุตัวแปร)
 
 module.exports = { resolvers }
